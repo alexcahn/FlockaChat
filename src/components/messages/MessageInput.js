@@ -9,20 +9,13 @@ export default class MessageInput extends Component {
         this.sendMessage = this.sendMessage.bind(this)
     }
 
-	/*
-	*	Handles submitting of form.
-	*	@param e {Event} onsubmit event
-	*/
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault()
         this.sendMessage()
         this.setState({ message: "" })
     }
 
-	/*
-	*	Send message to add to chat.
-	*/
-    sendMessage() {
+    sendMessage = () => {
 
         this.props.sendMessage(this.state.message)
         this.blur()
@@ -33,10 +26,7 @@ export default class MessageInput extends Component {
 
     }
 
-	/*
-	*	Starts/Stops the interval for checking 
-	*/
-    sendTyping() {
+    sendTyping = () => {
         this.lastUpdateTime = Date.now()
         if (!this.state.isTyping) {
             this.setState({ isTyping: true })
@@ -45,10 +35,8 @@ export default class MessageInput extends Component {
         }
     }
 
-	/*
-	*	Start an interval that check if the user is typing
-	*/
-    startCheckingTyping() {
+    startCheckingTyping = () => {
+        console.log("Typing")
         this.typingInterval = setInterval(() => {
 
             if ((Date.now() - this.lastUpdateTime) > 300) {
@@ -58,10 +46,8 @@ export default class MessageInput extends Component {
         }, 300)
     }
 
-	/*
-	*	Stops the interval from checking if the user is typing
-	*/
-    stopCheckingTyping() {
+    stopCheckingTyping = () => {
+        console.log("Stop Typing")
         if (this.typingInterval) {
             clearInterval(this.typingInterval)
             this.props.sendTyping(false)

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SideBar from './SideBar'
-import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECIEVED, TYPING } from '../../Events'
+import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECEIVED, TYPING } from '../../Events'
 import ChatHeading from './ChatHeading'
 import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
@@ -33,10 +33,10 @@ export default class ChatContainer extends Component {
         this.setState({ chats: newChats })
 
 
-        const messageEvent = `${MESSAGE_RECIEVED}-${chat.id}`
+        const messageEvent = `${MESSAGE_RECEIVED}-${chat.id}`
         const typingEvent = `${TYPING}-${chat.id}`
 
-        socket.on(typingEvent)
+        socket.on(typingEvent, this.updateTypingInChat(chat.id))
         socket.on(messageEvent, this.addMessageToChat(chat.id))
     }
 
