@@ -14,7 +14,7 @@
   },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "concurrently 'npm run react' 'npm run server'",
+    "start:dev": "npm run react && npm run server",
     "start:prod": "node src/server/index.js",
     "react": "react-scripts start",
     "server": "nodemon src/server/index.js",
