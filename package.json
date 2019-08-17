@@ -3,40 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.17.1",
     "lodash": "^4.17.15",
-    "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-icons": "^3.7.0",
-    "react-scripts": "3.1.1",
-    "socket.io": "^2.2.0",
-    "uuid": "^3.3.2"
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-icons": "^2.2.5",
+    "react-scripts": "1.0.11",
+    "socket.io": "^2.0.3",
+    "uuid": "^3.1.0"
   },
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:dev": "npm run react && npm run server",
-    "start:prod": "node src/server/index.js",
+    "start": "node src/server/index.js",
+    "dev": "concurrently 'npm run react' 'npm run server'",
     "react": "react-scripts start",
     "server": "nodemon src/server/index.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
-    "nodemon": "^1.19.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "nodemon": "^1.11.0"
   }
 }

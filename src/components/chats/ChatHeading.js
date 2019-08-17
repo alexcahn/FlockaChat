@@ -15,6 +15,3 @@ export default class ChatHeading extends Component {
         );
     }
 }
-
-
-

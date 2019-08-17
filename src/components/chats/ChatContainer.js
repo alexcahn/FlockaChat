@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react'
 import SideBar from '../sidebar/SideBar'
 import { COMMUNITY_CHAT, MESSAGE_SENT, MESSAGE_RECEIVED, TYPING, PRIVATE_MESSAGE } from '../../Events'
