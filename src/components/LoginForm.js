@@ -53,8 +53,8 @@ export default class LoginFrom extends Component {
                         onChange={this.handleChange}
                         placeholder={'username'}
                     />
-                    <button type='submit' value={nickname} className="loginButton">Submit</button>
                     <div className="error">{error ? error : null}</div>
+                    <button type='submit' value={nickname} className="loginButton">Submit</button>
 
                 </form>
             </div>
