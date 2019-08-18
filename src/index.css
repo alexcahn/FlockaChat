@@ -221,7 +221,7 @@ input,textarea{
         height:100%;
         width:76.25%
     }
-    @media screen and (max-width: 510px){
+    @media screen and (max-width: 374px){
         #side-bar{
             position:absolute;
             left:-100%
