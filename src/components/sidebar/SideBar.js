@@ -34,7 +34,6 @@ export default class SideBar extends Component {
                         value={receiver}
                         onChange={(e) => { this.setState({ receiver: e.target.value }) }}
                     />
-                    <div className="plus"></div>
                 </form>
                 <div
                     className="users"

@@ -91,13 +91,13 @@ input,textarea{
         flex-grow:1;
         box-sizing:border-box;
         border:none;
-        color:#cac8ee
+        color:#ffffff
     }
     #side-bar .search input:focus{
         outline:none
     }
     #side-bar .search input::placeholder{
-        color:#cac8ee;
+        color:#ffffff;
         opacity:.6
     }
     #side-bar .search .plus{
@@ -402,5 +402,5 @@ input,textarea{
             }
             .message-input .message-form .send:disabled{
                 opacity:.2;
-                background:#2c07ff
+                background:#0c10e6
             }
