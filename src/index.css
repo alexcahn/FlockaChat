@@ -246,10 +246,11 @@ input,textarea{
         height:100%;
         width:76.25%
     }
-    @media screen and (max-width: 374px){
+    @media screen and (max-width: 300px){
         #side-bar{
             position:absolute;
-            left:-100%
+            left:-100%;
+            font-weight: 12px;
         }
         .chat-room-container{
             width:100%}

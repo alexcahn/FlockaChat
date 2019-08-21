@@ -55,7 +55,6 @@ export default class LoginFrom extends Component {
                     />
                     <div className="error">{error ? error : null}</div>
                     <button type='submit' value={nickname} className="loginButton">Submit</button>
-
                 </form>
             </div>
         )

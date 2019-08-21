@@ -46,7 +46,7 @@ module.exports = function (socket) {
         }
     })
 
-    // user logsout
+    // user logs out
     socket.on(LOGOUT, () => {
         connectedUsers = removeUser(connectedUsers, socket.user.name)
         io.emit(USER_DISCONNECTED, connectedUsers)
@@ -58,14 +58,17 @@ module.exports = function (socket) {
         callback(communityChat)
     })
 
+    // sends message between users
     socket.on(MESSAGE_SENT, ({ chatId, message }) => {
         sendMessageToChatFromUser(chatId, message)
     })
 
+    // show other users when current user is typing
     socket.on(TYPING, ({ chatId, isTyping }) => {
         sendTypingFromUser(chatId, isTyping)
     })
 
+    // able to set up private messages. will add feature of group chat names
     socket.on(PRIVATE_MESSAGE, ({ receiver, sender, activeChat }) => {
         if (receiver in connectedUsers) {
             const receiverSocket = connectedUsers[receiver].socketId
